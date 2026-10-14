@@ -1,0 +1,1 @@
+qrcode-generator 2.0.4 by Kazuhiko Arase - MIT licence (stated in the header of qrcode.js and in the package metadata). Source: https://www.npmjs.com/package/qrcode-generator

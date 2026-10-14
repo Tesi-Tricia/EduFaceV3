@@ -1,0 +1,60 @@
+<div class="doc">
+<h1>Privacy and compliance checklist</h1>
+<p class="alert"><strong>Not legal advice.</strong> A practical checklist aligned to the principles of Uganda's <em>Data Protection and Privacy Act, 2019</em> (regulator: the Personal Data Protection Office, PDPO, under NITA-U) and good practice for children's biometric data. The school is the <em>data controller</em>. Have the school's lawyer or a data-protection adviser confirm current requirements, registration and deadlines with the PDPO. Outside Uganda, use the local law.</p>
+
+<h2>Why this is high-risk</h2>
+<p>Face data is <strong>biometric</strong> and belongs to <strong>children</strong>. A password can be changed; a face cannot. EduFace stores as little as possible, but the school's decisions decide whether use is lawful and fair.</p>
+
+<h2>Before go-live</h2>
+<h3>Responsibility</h3>
+<ul><li>&#9744; A named data-protection officer / responsible person (head teacher, deputy or board member).</li><li>&#9744; Checked whether the school must <strong>register with the PDPO</strong>; registered if required (keep the certificate).</li><li>&#9744; Written agreements with anyone who handles the data (installer/support, whoever has administrator access).</li></ul>
+<h3>Need and fairness (a one-page DPIA)</h3>
+<ul><li>&#9744; Written: what we do and why; why face recognition rather than cards/QR; risks; safeguards; who approved; review date.</li><li>&#9744; Purpose limited to <strong>attendance and campus safety</strong>. Not used for discipline scoring, marketing, or shared with others.</li><li>&#9744; A <strong>non-biometric alternative</strong> (QR card / manual) works for every student.</li></ul>
+<h3>Consent for children</h3>
+<ul><li>&#9744; For each child: <strong>written, informed, voluntary</strong> consent from a parent/guardian for face-based attendance (separate from consent for messages).</li>
+<li>&#9744; The form says in plain language: what is collected (a numeric template of the face &mdash; <strong>not photos</strong>), why, who can see it, how long it is kept, where it is stored (<strong>this computer only</strong>, no cloud), the right to refuse <em>without any penalty</em>, the right to withdraw anytime, and who to contact.</li>
+<li>&#9744; Refusal does not disadvantage the child. &#9744; Consent is recorded in EduFace <em>before</em> any face is captured (the app blocks enrolment without it) and the signed form is filed.</li>
+<li>&#9744; Parents know how to withdraw; withdrawal deletes the face data immediately.</li>
+<li>&#9744; Staff and visitors are informed; signs at the gate and visitor desk ("Face scanning in use &mdash; ask for the alternative").</li></ul>
+<h3>Transparency</h3><ul><li>&#9744; A privacy notice available to parents at admission and on request (data, purpose, retention, rights, how to complain to the school and the PDPO).</li></ul>
+
+<h2>Security: what EduFace does, and what the school must do</h2>
+<table><thead><tr><th>EduFace provides</th><th>The school must</th></tr></thead><tbody>
+<tr><td>Only encrypted face templates stored (AES-256-GCM); no face photos kept</td><td>Keep the computer in a locked room; turn on BitLocker; set a Windows password</td></tr>
+<tr><td>Passwords hashed; lockout after 5 wrong tries; 15-minute inactivity sign-out; roles</td><td>Give accounts only to people who need them; disable leavers the same day</td></tr>
+<tr><td>Tamper-evident audit log of sensitive actions</td><td>Review it monthly; investigate overrides and failed sign-ins</td></tr>
+<tr><td>Encrypted backup files</td><td>Keep the backup and its passphrase in <em>different</em> safe places; test a restore</td></tr>
+<tr><td>Nothing is sent to the internet; the app and models run locally</td><td>Keep the computer updated; do not install unknown software</td></tr>
+</tbody></table>
+<p><strong>Limit of this edition:</strong> security is enforced in the browser. Someone with full control of the computer (or its browser profile) could bypass it. Physical and Windows-level protection is essential.</p>
+
+<h2>Retention (confirm and record the school's decision)</h2>
+<table><thead><tr><th>Data</th><th>Default</th><th>Where</th></tr></thead><tbody>
+<tr><td>Face templates after consent withdrawal</td><td>deleted immediately</td><td>automatic</td></tr>
+<tr><td>Face templates of withdrawn/graduated students</td><td>90 days after status change</td><td>Settings &rarr; Data retention</td></tr>
+<tr><td>Visitor ID/phone/records</td><td>365 days</td><td>Settings &rarr; Data retention</td></tr>
+<tr><td>Attendance records</td><td>school's record-keeping period (decide)</td><td>school policy</td></tr>
+<tr><td>Audit log</td><td>kept (security record)</td><td>&mdash;</td></tr>
+<tr><td>Guardian messages</td><td>cancelled after 24 hours if unsent</td><td>automatic</td></tr>
+<tr><td>Backup files</td><td>delete old copies on a schedule you set; faces inside old backups cannot be edited</td><td>school policy</td></tr>
+</tbody></table>
+
+<h2>Data map (for the notice and the DPIA)</h2>
+<table><thead><tr><th>Data</th><th>Purpose</th><th>Stored</th><th>Seen by</th></tr></thead><tbody>
+<tr><td>Student name, number, class, guardian name/phone</td><td>Attendance, messages</td><td>This browser</td><td>Admin, teachers</td></tr>
+<tr><td>Face template (128 numbers, encrypted)</td><td>Recognise the student</td><td>This browser</td><td>Never shown; matched in memory</td></tr>
+<tr><td>Consent records</td><td>Prove lawful basis</td><td>This browser</td><td>Admin</td></tr>
+<tr><td>Attendance events</td><td>Records, reports</td><td>This browser</td><td>Admin, teachers</td></tr>
+<tr><td>Visitor name, phone, ID no., purpose, host, vehicle</td><td>Safety, roll call</td><td>This browser</td><td>Admin, security</td></tr>
+<tr><td>Guardian message text</td><td>Inform guardians</td><td>This browser; sent by the person pressing Send, via their phone's SMS</td><td>Staff, the guardian, the phone network</td></tr>
+</tbody></table>
+
+<h2>Rights requests and incidents</h2>
+<ul>
+<li>&#9744; A named person handles requests to see, correct or delete a child's data and replies within the legal time. EduFace can show a student's attendance history; deleting face data is immediate (Enrol faces &rarr; Withdraw consent).</li>
+<li>&#9744; A one-page <strong>incident plan</strong>: who to call, how to disable accounts (Users page), who notifies the PDPO and affected parents. The Act expects prompt breach notification &mdash; confirm the deadline and form with the PDPO. Examples: stolen computer or backup USB, misused administrator account. A lost <strong>backup passphrase or backup file</strong> is an incident too.</li>
+</ul>
+
+<h2>Ongoing</h2>
+<ul><li>Yearly: review consents, remove leavers, repeat the accuracy test, review the DPIA.</li><li>Monthly: audit-log check; test restoring a backup.</li><li>Before any new use of the data: update the notice and the DPIA.</li></ul>
+</div>

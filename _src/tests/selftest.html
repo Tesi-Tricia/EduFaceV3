@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval'; style-src 'self'; img-src 'self' blob: data:; media-src 'self' blob:; connect-src 'self'; worker-src 'self' blob:; object-src 'none'; base-uri 'none'; form-action 'self'">
+<title>EduFace self-test</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<main class="doc" id="main">
+<h1>EduFace self-test</h1>
+<p>Runs the app's own checks in this browser against a throw-away test database. <strong>Your real school data is not touched.</strong></p>
+<p class="row"><button class="primary" id="run">Run self-test</button><label class="row"><input type="checkbox" id="slow"> include the face-engine check (can take a minute on older computers)</label><button id="wipe">Delete test database</button></p>
+<p id="sum" class="muted">Not run yet.</p>
+<ul id="out" class="results"></ul>
+</main>
+<script src="js/phase.js"></script>
+<script src="js/util.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/db.js"></script>
+<script src="js/crypto.js"></script>
+<script src="js/audit.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/shell.js"></script>
+__SCRIPTS__
+<script src="js/selftest-runner.js"></script>
+</body>
+</html>

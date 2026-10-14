@@ -1,0 +1,54 @@
+<div class="doc">
+<h1>Accuracy and bias test plan</h1>
+<p class="alert"><strong>Nothing here has been run yet.</strong> The numbers are <em>targets</em>. The face engine (a small open-source model running in your browser) has not been tested on your students, cameras or lighting.</p>
+
+<h2>Why it matters</h2>
+<p>Face recognition works unevenly across skin tones, ages, genders, lighting and cameras. In a school this can mean some children are wrongly marked absent &mdash; or, worse, marked as someone else. Risk is higher for <strong>children</strong> (faces change fast) and in <strong>poor light</strong>. This engine is also a lighter, older model than the server edition's, so test it honestly.</p>
+
+<h2>What to measure (per group)</h2>
+<table><thead><tr><th>Term</th><th>Meaning</th><th>Effect</th></tr></thead><tbody>
+<tr><td><strong>FRR</strong> false reject</td><td>An enrolled student is not recognised</td><td>Queue, QR/manual, frustration</td></tr>
+<tr><td><strong>FAR</strong> false accept</td><td>A different person is accepted as an enrolled student</td><td>Wrong child marked present &mdash; <strong>the serious error</strong></td></tr>
+<tr><td>Not sure</td><td>Two students look alike; the app refuses to guess</td><td>Manual fallback</td></tr>
+<tr><td>Speed</td><td>Time from face in view to result</td><td>Queues</td></tr>
+</tbody></table>
+<p>Every face scan stores its confidence on the attendance record, so real-life data can be analysed later.</p>
+
+<h2>Targets (agree with the head teacher; write down the decision)</h2>
+<table><thead><tr><th>Metric</th><th>Overall</th><th>Worst group</th></tr></thead><tbody>
+<tr><td>FAR (impostor accepted)</td><td>&le; 0.1% (1 in 1,000 attempts)</td><td>&le; 0.3%</td></tr>
+<tr><td>FRR (enrolled student rejected)</td><td>&le; 5%</td><td>&le; 10%</td></tr>
+<tr><td>Gap between best and worst group FRR</td><td>&mdash;</td><td>&le; 5 points</td></tr>
+<tr><td>Speed</td><td>typical &lt; 0.5 s</td><td>&mdash;</td></tr>
+</tbody></table>
+<p>If a group misses its target, <strong>do not use face scanning for that group</strong>: improve light, re-enrol, tighten Settings &rarr; Face recognition, or give that group the QR-card route.</p>
+
+<h2>How to test</h2>
+<h3>Volunteers</h3>
+<ul><li><strong>Only with written consent</strong> (guardian for children). Treat the test like real enrolment. Tell volunteers the data is deleted afterwards.</li>
+<li>At least <strong>20 per group</strong> (more is better; with 20 people one error is 5%, so treat results as a warning, not proof).</li>
+<li>Groups: skin tone (light / medium / dark), age (under 12 / 12&ndash;14 / 15&ndash;18 / adult), gender, glasses, headscarves, braids or hair over the forehead, school caps, siblings/twins (hardest for FAR). Record anonymous group labels, not names.</li></ul>
+<h3>Conditions (each volunteer)</h3>
+<p>Morning sun on the face &middot; backlit &middot; overcast/shade &middot; indoor classroom light &middot; dim. Camera at chest vs eye height; distance 0.5 m / 1 m / 2 m.</p>
+<h3>Procedure</h3>
+<ol>
+<li>Enrol each volunteer normally (3&ndash;5 frames).</li>
+<li><strong>Genuine attempts:</strong> each volunteer scans 5 times per condition at the real gate camera. Note: recognised / unknown / not sure / <em>wrong person</em>, and time.</li>
+<li><strong>Impostor attempts:</strong> people who are <em>not</em> enrolled (staff, older volunteers, siblings of enrolled students) scan. Any "matched" is a false accept. Aim for 500+ impostor attempts overall.</li>
+<li>Repeat after 2&ndash;3 months: children's faces change. Decide how often to re-enrol (suggested: yearly, sooner for under-12s).</li>
+<li>Fill in the sheet below; compute FRR and FAR per group.</li></ol>
+<table><thead><tr><th>Group</th><th>Condition</th><th>Genuine attempts</th><th>Rejected</th><th>FRR %</th><th>Impostor attempts</th><th>Wrongly accepted</th><th>FAR %</th></tr></thead><tbody><tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table>
+
+<h2>Tuning (only after measuring)</h2>
+<ul><li><strong>Maximum distance</strong> (Settings &rarr; Face recognition; default 0.50): <em>lower = stricter</em> (fewer wrong accepts, more rejects). Change in steps of 0.02&ndash;0.05 and re-run the impostor test.</li>
+<li><strong>Gap to next-best student</strong> (default 0.08): raise it for schools with many siblings.</li>
+<li>Improve the data before the thresholds: better light, camera height, 5 frames at different angles, re-enrol poor ones.</li>
+<li>Never loosen a threshold to make one group pass if it raises wrong accepts.</li></ul>
+
+<h2>Photos and phone screens</h2>
+<p>There is <strong>no anti-spoofing</strong> in this edition. A printed photo or a phone screen can fool the scan. Treat face scan as a convenience for attendance, <em>not</em> identity proof. Never use it to release a child to an adult.</p>
+
+<h2>Report and follow-up</h2>
+<p>Write one page: groups, conditions, FRR/FAR table, decisions (thresholds, who uses QR instead), date, who ran it. Keep it with the privacy assessment. Repeat after any change of camera, location or threshold, and yearly. Weekly in use: if one class suddenly has many "not recognised", suspect light or the camera, not the children.</p>
+<p><strong>Ethics:</strong> volunteers can withdraw anytime and have their test data deleted. Report by group only, never by individual child.</p>
+</div>

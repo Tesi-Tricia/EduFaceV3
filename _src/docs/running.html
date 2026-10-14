@@ -1,0 +1,49 @@
+<div class="doc">
+<h1>Running EduFace (static HTML edition)</h1>
+<p>This edition has <strong>no server and no database</strong>. The pages run in the browser and keep all data inside that browser (IndexedDB) on that one computer.</p>
+
+<h2>Start it</h2>
+<ol>
+<li>Double-click <strong>start.bat</strong>. A black window opens: it is a tiny web server that works <em>only on this computer</em>. Leave it open.</li>
+<li>Your browser opens <strong>http://localhost:8080</strong>. (Use Chrome or Edge. The address must say <code>localhost</code>: browsers only allow the camera on localhost or https.)</li>
+<li>First time: create the school and the administrator. No internet is needed.</li>
+<li>Install it as an app (browser menu &rarr; <em>Install EduFace</em>). Afterwards it opens even when start.bat is not running.</li>
+</ol>
+
+<h2>What "data stays in this browser" means</h2>
+<ul>
+<li>Another browser, another Windows user, or another computer sees <strong>nothing</strong>. A gate tablet and an office PC do <strong>not</strong> share records.</li>
+<li>Clearing browsing data, a private/incognito window, or a disk clean-up can <strong>delete everything</strong>.</li>
+<li>Therefore: make an encrypted <strong>backup</strong> (Backup page) at least weekly and keep the file and its passphrase safe, in different places.</li>
+<li>If the administrator password is forgotten, the data cannot be recovered (it is encrypted on purpose).</li>
+</ul>
+
+<h2>Best way to use it at a school</h2>
+<ul>
+<li>One computer with a webcam at the gate (or the office) runs the app in <strong>Gate kiosk</strong> mode. That same computer holds all the data.</li>
+<li>Enable BitLocker, set a Windows password, lock the room. The app's passwords protect against honest mistakes; they cannot stop someone who controls the computer.</li>
+<li>Need several gates or tablets sharing live data? This edition cannot do that. Use the server edition (separate project) instead.</li>
+</ul>
+
+<h2>Moving to another computer</h2>
+<ol><li>Backup page &rarr; <em>Download backup</em> (choose a passphrase).</li><li>On the new computer open the same folder, create any temporary school, then Backup &rarr; <em>Restore</em> with the file and passphrase. Everyone signs in again with their old passwords.</li></ol>
+
+<h2>Messages to guardians</h2>
+<p>A browser cannot send SMS by itself. EduFace queues the messages; on a phone or tablet the <strong>Send</strong> button opens the SMS app with the text ready. Or use <strong>Export CSV</strong> for a bulk-SMS service.</p>
+
+<h2>Camera and speed</h2>
+<ul>
+<li>After signing in, the face engine prepares itself for a few seconds (a banner says so). <strong>The very first time on an older computer the screen can pause for up to a minute</strong> while the graphics chip compiles its programs; the next times take about 5 seconds. QR cards work meanwhile. After that a scan takes roughly 0.2&ndash;0.5 s on a normal computer.</li>
+<li>If the computer has only a very old graphics chip and the pause is a problem, turn off <em>Prepare the face engine when someone signs in</em> in Settings, and sign in once before the school day starts.</li>
+<li>Good, even light on the face matters more than camera resolution.</li>
+</ul>
+
+<h2>Known limits (be honest with the school)</h2>
+<ul>
+<li><strong>No anti-spoofing</strong>: a printed photo or a phone screen could fool the face scan. Do not use it as proof of identity.</li>
+<li>Accuracy has <strong>not</strong> been measured on your students and camera. Run the accuracy test (Help &rarr; Accuracy test) before relying on it.</li>
+<li>Security is client-side: someone with full control of the browser can bypass screen locks. Protect the computer itself.</li>
+<li>No automatic SMS, no live sync between devices, no central server.</li>
+</ul>
+</div>
+

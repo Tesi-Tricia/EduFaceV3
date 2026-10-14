@@ -1,0 +1,60 @@
+<div class="doc">
+<h1>Staff training guide</h1>
+<p>No computer skills needed beyond using a tablet or PC. Practise on a <em>training copy</em> (Settings &rarr; Load demo data, on a spare browser profile), never on the real school.</p>
+
+<h2>Everyone (10 minutes)</h2>
+<p><strong>What EduFace does:</strong> at the gate the camera recognises a student's face (or reads their QR card) and marks them present or late. It also records visitors. It works without internet.</p>
+<ol>
+<li><strong>Consent first.</strong> A child's face is scanned only if the parent/guardian signed the consent form. No consent = QR card or manual mark. Never pressure a parent.</li>
+<li><strong>Be fair.</strong> If the camera does not recognise a child, it is the machine's mistake. Use the QR card or a manual mark. Never punish.</li>
+<li><strong>Keep your password private.</strong> Never share logins. Sign out when you leave. After 15 minutes of no activity you are signed out automatically (the gate kiosk is the exception).</li>
+<li><strong>Everything is recorded.</strong> Changes you make are logged with your name and a reason.</li>
+<li><strong>No photos or screenshots</strong> of student lists on personal phones.</li>
+</ol>
+
+<h2>Teachers</h2>
+<h3>See who is in class</h3><p><strong>Attendance</strong> &rarr; choose the date and class &rarr; Present / Late / Absent / Excused for each child.</p>
+<h3>Correct a mistake</h3>
+<ol><li>Attendance &rarr; find the child &rarr; <strong>Override</strong>.</li><li>Choose the status and direction.</li><li>Write the <strong>reason</strong> (required, e.g. "arrived with mother at 8:40").</li><li>Save. Your name and the reason are recorded.</li></ol>
+<h3>A child is not recognised</h3>
+<p>Stay calm: (1) look at the camera, step into the light; (2) still failing &rarr; scan the <strong>QR card</strong>; (3) no card &rarr; <strong>Override</strong>; (4) tell the administrator if it happens daily (re-enrol the face).</p>
+
+<h2>Security / front desk</h2>
+<ul>
+<li><strong>Check in a visitor:</strong> Visitors &rarr; name, phone, ID number, person visiting, purpose &rarr; Check in &rarr; print the badge. If it says <strong>BLOCKED</strong>, do not admit: call the head teacher/security lead. A <strong>watch</strong> warning means admit only as instructed and inform the lead.</li>
+<li><strong>Check out:</strong> scan the badge QR or press <em>Check out</em>. A red <em>overstay</em> label means: go and check on them.</li>
+<li><strong>Emergency roll call:</strong> Roll call lists everyone on campus now (students last scanned <em>in</em> + visitors). Print it and take it to the assembly point. Also count classes by hand.</li>
+</ul>
+
+<h2>School administrator</h2>
+<ul>
+<li><strong>Add students:</strong> Students &rarr; + Add, or <em>Template</em> &rarr; fill in a spreadsheet &rarr; <em>Import CSV</em>. Print <em>QR cards</em>.</li>
+<li><strong>Enrol faces:</strong> Enrol faces &rarr; choose the student &rarr; record the guardian's <strong>consent</strong> (you must hold the signed form) &rarr; Start camera &rarr; capture 3&ndash;5 frames following the hints (<em>Move closer, Too dark, Face the camera</em>) &rarr; Finish.</li>
+<li><strong>Withdrawn consent:</strong> Enrol faces &rarr; student &rarr; <em>Withdraw consent and delete face data</em>. Done immediately; the child uses the QR card.</li>
+<li><strong>Daily:</strong> after the gate closes, Attendance &rarr; <em>Close day</em> marks children with no scan absent (and queues guardian messages).</li>
+<li><strong>Weekly:</strong> Backup &rarr; Download backup. Keep the file and passphrase apart.</li>
+<li><strong>Monthly:</strong> Audit log &rarr; check it says <em>Chain intact</em>; remove accounts of leavers; check consents.</li>
+</ul>
+
+<h2>When things go wrong</h2>
+<table>
+<thead><tr><th>Situation</th><th>Do this</th></tr></thead>
+<tbody>
+<tr><td>Power cut</td><td>Paper registers. Start the computer again; open the app; your data is still there.</td></tr>
+<tr><td>Camera does not start</td><td>The address must be <code>http://localhost:8080</code>. Allow the camera when asked. Close other programs using it (Teams, Zoom).</td></tr>
+<tr><td>Face engine "preparing"</td><td>Wait up to a minute after signing in. Use QR cards meanwhile.</td></tr>
+<tr><td>Child not recognised</td><td>Light/angle &rarr; QR card &rarr; manual override with reason.</td></tr>
+<tr><td>Parent asks to delete their child's data</td><td>Withdraw consent (above). Same day. Tell the administrator.</td></tr>
+<tr><td>Forgot the administrator password</td><td>It cannot be recovered. Restore from a backup made when you still knew it.</td></tr>
+<tr><td>Wrong person marked</td><td>Override with reason; tell the administrator (two children may look alike).</td></tr>
+</tbody></table>
+
+<h2>Practice test (sign-off)</h2>
+<ul>
+<li>&#9744; Sign in and out; change language.</li>
+<li>&#9744; (Teacher) override an absent child to late with a reason; run and export a late-comers report.</li>
+<li>&#9744; (Security) check in a visitor, print the badge, check out by QR; try a blocked visitor; open and print the roll call.</li>
+<li>&#9744; (Admin) import 3 students; record consent and enrol a face; withdraw consent and see the face data disappear; make and restore a backup.</li>
+<li>&#9744; Everyone: say the three rules &mdash; consent first, be fair, keep passwords private.</li>
+</ul>
+</div>
